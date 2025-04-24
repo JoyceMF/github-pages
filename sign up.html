@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <form class="form">
+      <p id="head-title">Sign Up</p>
+      
+      <div class="login-field">
+        <i class="input-icon fa-solid fa-user"></i>
+        <input type="text" class="input-field" placeholder="Username" required> 
+      </div>
+  
+      <div class="login-field">
+        <i class="input-icon fa-solid fa-lock"></i>
+        <input type="password" class="input-field" placeholder="Password" required> 
+      </div>
+  
+      <div class="login-field">
+        <i class="input-icon fa-solid fa-envelope"></i>
+        <input type="email" class="input-field" placeholder="Email" required>
+      </div>
+
+      <div class="btn">
+        <button type="submit" class="button-1">Sign Up</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    document.querySelector(".form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Empêche la soumission du formulaire et le rechargement de la page
+
+      const username = document.querySelector("input[type='text']").value.trim();
+      const password = document.querySelector("input[type='password']").value;
+      const email = document.querySelector("input[type='email']").value;
+
+      // Vérification que tous les champs sont remplis
+      if (username && password && email) {
+        // Enregistrement dans localStorage
+        const newUser = { username, password, email };
+        localStorage.setItem(`user_${username}`, JSON.stringify(newUser));
+
+        alert("Inscription réussie ! Vous pouvez maintenant vous connecter.");
+
+        // Redirige vers la page de connexion (login)
+        window.location.href = "login.html"; // Redirection vers la page de connexion
+      } else {
+        alert("Tous les champs sont requis !");
+      }
+    });
+  </script>
+
+</body>
+</html>

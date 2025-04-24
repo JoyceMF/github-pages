@@ -1,0 +1,161 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("fond.jpg");
+    background-size: cover;  
+    background-position: center; 
+    background-attachment: fixed; 
+    color: #003366;
+}
+
+header {
+    background-color: rgba(0, 80, 158, 0.8); 
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    box-shadow: 0 4px 8px rgba(0, 51, 102, 0.1);
+}
+
+header h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+.device {
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 51, 102, 0.1);
+    padding: 40px;
+    background-color: #ffffff;  
+    border: 1px solid #ddd; 
+}
+.device h2 {
+    font-size: 2.5em;
+    color: #00509e;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.device p {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #002b5c;
+    margin-bottom: 30px;
+}
+.device button{
+    background-color: #00509e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    color: #003366;
+}
+
+form input,
+form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f1f8ff;  
+}
+
+form textarea {
+    resize: vertical;
+}
+
+.device .other-info {
+    background-color: #ffffff;
+    border: 1px solid #b0c9e6; 
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 51, 102, 0.1);
+}
+
+.device .other-info h3 {
+    font-size: 1.8em;
+    color: #003366;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #00509e;
+    box-shadow: 0 0 10px rgba(0, 80, 158, 0.2);
+}
+
+form button {
+    background-color: #00509e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+form button:hover {
+    background-color: #003366;
+}
+
+
+footer {
+    text-align: center;
+    background-color: rgba(0, 80, 158, 0.8); 
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 51, 102, 0.1);
+}
+
+@media (max-width: 768px) {
+    .device {
+        padding: 30px 15px;
+    }
+
+    .device h2 {
+        font-size: 2em;
+    }
+
+    .device p,
+    .device form label,
+    .device form input,
+    .device form button {
+        font-size: 1em;
+    }
+}

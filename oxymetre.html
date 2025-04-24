@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oxymètre Connecté</title>
+  <link rel="stylesheet" href="oxy.css">
+</head>
+<body>
+
+  <header>
+    <h1>Oxymètre Connecté</h1>
+    <p>Mesurez votre taux d'oxygène dans le sang.</p>
+  </header>
+
+  <main>
+    <nav>
+      <a href="Index 2.html">← Retour à l'accueil</a>
+    </nav>
+
+    <section class="device">
+      <h2>Oxymètre de pouls</h2>
+      <button onclick="genererOxymetre()">Prendre une mesure</button>
+      <div id="resultOxymetre" style="margin-top: 15px;"></div>
+    </section>
+
+  <section class="other-info">
+    <h3>Autres informations santé</h3>
+    <form onsubmit="event.preventDefault(); enregistrerInfos();">
+      <label for="meal">Que avez-vous mangé aujourd'hui ?</label>
+      <textarea id="meal" name="meal" rows="3" required></textarea>
+
+      <label for="sugar">Votre taux de sucre (mg/dL) :</label>
+      <input type="number" id="sugar" name="sugar" required />
+
+      <label for="steps">Combien de pas avez-vous fait ?</label>
+      <input type="number" id="steps" name="steps" required />
+
+      <button type="submit">Enregistrer</button>
+    </form>
+  </section>
+</main>
+
+
+  <footer>
+    <p>© 2025 Hôpital Connecté - Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    function genererOxymetre() {
+      const spo2 = Math.floor(Math.random() * (100 - 85 + 1)) + 85;
+      const bpm = Math.floor(Math.random() * (120 - 40 + 1)) + 40;
+
+      let diagSpO2 = "";
+      if (spo2 >= 95) diagSpO2 = "Saturation normale ✅";
+      else if (spo2 >= 92) diagSpO2 = "Saturation limite ⚠️";
+      else diagSpO2 = "Hypoxie possible ❌";
+
+      let diagBPM = "";
+      if (bpm < 60) diagBPM = "Bradycardie ⚠️";
+      else if (bpm <= 100) diagBPM = "Fréquence normale ✅";
+      else diagBPM = "Tachycardie ⚠️";
+
+      document.getElementById("resultOxymetre").innerHTML = `
+        <p><strong>SpO2 :</strong> ${spo2}%</p>
+        <p>${diagSpO2}</p>
+        <p><strong>Fréquence cardiaque :</strong> ${bpm} bpm</p>
+        <p>${diagBPM}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>

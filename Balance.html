@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Balance Connectée</title>
+  <link rel="stylesheet" href="bal.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Balance Connectée</h1>
+    <p>Gardez un suivi de votre poids et de votre masse grasse.</p>
+  </header>
+
+  <main>
+    <nav>
+      <a href="Index 2.html">← Retour à l'accueil</a>
+    </nav>
+
+    <section class="device">
+      <h2>Mesure IMC</h2>
+      <button onclick="genererIMC()">Prendre une mesure</button>
+      <div id="resultIMC"></div>
+    </section>
+
+    <section class="other-info">
+      <h3>Autres informations santé</h3>
+      <form onsubmit="event.preventDefault(); enregistrerInfos();">
+        <label for="meal">Que avez-vous mangé aujourd'hui ?</label>
+        <textarea id="meal" name="meal" rows="3" required></textarea>
+
+        <label for="sugar">Votre taux de sucre (mg/dL) :</label>
+        <input type="number" id="sugar" name="sugar" required />
+
+        <label for="steps">Combien de pas avez-vous fait ?</label>
+        <input type="number" id="steps" name="steps" required />
+
+        <button type="submit">Enregistrer</button>
+      </form>
+    </section>
+  </main>
+3*2
+  <footer>
+    <p>© 2025 Hôpital Connecté - Tous droits réservés.</p>
+  </footer>
+
+  <script>
+    function genererIMC() {
+      const imc = (Math.random() * (45 - 15) + 15).toFixed(1);
+      let diagnostic = "";
+
+      if (imc < 18.5) diagnostic = "Insuffisance pondérale ⚠️";
+      else if (imc < 25) diagnostic = "Poids normal ✅";
+      else if (imc < 30) diagnostic = "Surpoids ⚠️";
+      else if (imc < 35) diagnostic = "Obésité modérée ⚠️";
+      else if (imc < 40) diagnostic = "Obésité sévère ❌";
+      else diagnostic = "Obésité morbide ❌";
+
+      document.getElementById("resultIMC").innerHTML =
+        `<p><strong>IMC :</strong> ${imc}</p><p><strong>Diagnostic :</strong> ${diagnostic}</p>`;
+    }
+
+    function enregistrerInfos() {
+      const repas = document.getElementById("meal").value;
+      const sucre = document.getElementById("sugar").value;
+      const pas = document.getElementById("steps").value;
+
+      console.log("Données enregistrées :");
+      console.log("Repas :", repas);
+      console.log("Taux de sucre :", sucre);
+      console.log("Nombre de pas :", pas);
+
+      alert("Informations enregistrées !");
+    }
+  </script>
+
+</body>
+</html>

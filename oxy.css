@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url("fond3.jpg"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #003366;
+}
+header {
+    background-color: rgba(0, 80, 158, 0.8);
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    box-shadow: 0 4px 8px rgba(0, 51, 102, 0.1);
+}
+
+header h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+.device {
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 51, 102, 0.1);
+    padding: 40px;
+    background-color: #ffffff;  
+    border: 1px solid #ddd;
+}
+
+.device h2 {
+    font-size: 2.5em;
+    color: #00509e;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.device form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.device label {
+    font-size: 1.1em;
+    color: #003366;
+}
+
+.device input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    background-color: #f1f8ff;
+}
+
+.device button {
+    background-color: #00509e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.device button:hover {
+    background-color: #003366;
+}
+.other-info {
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 12px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 51, 102, 0.1);
+    border: 1px solid #ddd;
+}
+
+.other-info h3 {
+    font-size: 2em;
+    color: #00509e;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.other-info form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.other-info label {
+    font-size: 1.1em;
+    color: #003366;
+}
+
+.other-info input, .other-info textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    background-color: #f1f8ff;
+}
+
+.other-info button {
+    background-color: #00509e;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+}
+
+.other-info button:hover {
+    background-color: #003366;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: rgba(0, 80, 158, 0.8);
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 51, 102, 0.1);
+}
+@media (max-width: 768px) {
+    .device, .other-info {
+        padding: 20px 15px;
+    }
+
+    .device h2, .other-info h3 {
+        font-size: 2em;
+    }
+
+    .device input, .other-info input, .other-info textarea {
+        font-size: 1em;
+    }
+
+    .device button, .other-info button {
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tensiomètre Connecté</title>
+    <link rel="stylesheet" href="tens.css">
+</head>
+<body>
+<header>
+    <h1>TENSIOMÈTRE CONNECTÉ</h1>
+    <p>Surveillez votre pression artérielle, fréquence cardiaque et bien plus encore.</p>
+</header>
+<main>
+    <nav>
+        <a href="Index 2.html">Retour à l'accueil</a>
+    </nav>
+
+    <section class="device">
+        <h2>Tensiomètre</h2>
+        <button onclick="genererTension()">Prendre une mesure</button>
+        <div id="resultTension"></div>
+        
+        <script>
+            function genererTension() {
+              const systolique = Math.floor(Math.random() * (180 - 80 + 1)) + 80;
+              const diastolique = Math.floor(Math.random() * (110 - 50 + 1)) + 50;
+          
+              let diagnostic = "";
+          
+              if (systolique < 90 || diastolique < 60)
+                diagnostic = "Hypotension ⚠️";
+              else if (systolique < 130 && diastolique < 85)
+                diagnostic = "Tension normale ✅";
+              else if (systolique < 140 || diastolique < 90)
+                diagnostic = "Hypertension légère ⚠️";
+              else
+                diagnostic = "Hypertension modérée ou sévère ❌";
+          
+              document.getElementById("resultTension").innerHTML =
+                `<p>Tension : ${systolique} / ${diastolique} mmHg</p><p>${diagnostic}</p>`;
+            }
+          
+            function enregistrerInfos() {
+              const repas = document.getElementById("meal").value;
+              const sucre = document.getElementById("sugar_level").value;
+              const pas = document.getElementById("steps").value;
+          
+              console.log("Données enregistrées :");
+              console.log("Repas :", repas);
+              console.log("Taux de sucre :", sucre);
+              console.log("Pas :", pas);
+          
+              alert("Informations enregistrées !");
+            }
+          </script>
+          
+          <h3>Autres informations santé</h3>
+          <form onsubmit="event.preventDefault(); enregistrerInfos();">
+            <label for="meal">Que avez-vous mangé aujourd'hui ?</label><br>
+            <textarea id="meal" name="meal" rows="3" required></textarea><br><br>
+          
+            <label for="sugar_level">Quel est votre taux de sucre ? (mg/dL)</label><br>
+            <input type="number" id="sugar_level" name="sugar_level" required><br><br>
+          
+            <label for="steps">Combien de pas avez-vous faits aujourd'hui ?</label><br>
+            <input type="number" id="steps" name="steps" required><br><br>
+          
+            <button type="submit">Enregistrer</button>
+          </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Hôpital Connecté - Tous droits réservés.</p>
+</footer>
+</body>
+</html>
+
